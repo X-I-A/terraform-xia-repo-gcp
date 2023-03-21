@@ -13,7 +13,7 @@ resource "google_service_account" "deployer_user" {
 
 resource "google_project_iam_binding" "storage_admin_binding" {
   project = var.project_id
-  role    = "roles/storage.Admin"
+  role    = "roles/storage.admin"
   members = ["serviceAccount:${google_service_account.deployer_user.email}"]
   depends_on = [google_service_account.deployer_user]
 }
