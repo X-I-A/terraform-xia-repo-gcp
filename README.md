@@ -17,7 +17,7 @@ or simply removing the related modules in `modules` subdirectory
 ### Variables 
 
 * project_id (Mandatory): Project id to initialize
-* deploy_user (Mandatory): The technical user which will be used to deploy application
+* deploy_user (Default="xia-deployer"): The technical user which will be used to deploy application
 
 ### Let's go !
 Open the Google Cloud Shell from Google Cloud Console and launching the following command and it is done
@@ -27,7 +27,7 @@ cd terraform-xia-repo-gcp
 terraform -chdir=environments/prod workspace new <project_id>
 terraform -chdir=environments/prod init
 terraform -chdir=environments/prod validate
-terraform -chdir=environments/prod plan -var="project_id=<project_id>" -var="repository_project=<repository project name>"
-terraform -chdir=environments/prod apply -var="project_id=<project_id>" -var="repository_project=<repository project name>" -auto-approve
+terraform -chdir=environments/prod plan -var="project_id=<project_id>"
+terraform -chdir=environments/prod apply -var="project_id=<project_id>" -auto-approve
 ```
 
